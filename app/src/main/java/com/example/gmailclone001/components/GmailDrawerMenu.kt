@@ -2,6 +2,7 @@ package com.example.gmailclone001.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -36,6 +37,24 @@ fun GmailDrawerMenu() {
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold
         )
+        menuList.forEach { item ->
+
+            when {
+                item.isDivider -> {
+                    Divider(modifier = Modifier.padding(bottom = 20.dp, top = 20.dp))
+                }
+                item.isHeader -> {
+                    Text(
+                        text = item.title!!, fontWeight = FontWeight.Light,
+                        modifier = Modifier.padding(start = 20.dp, bottom = 20.dp, top = 20.dp)
+                    )
+                }
+                else -> {
+                    MailDrawerItem(item = item)
+                }
+            }
+
+        }
 
 
     }
