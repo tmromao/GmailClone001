@@ -58,7 +58,6 @@ fun GmailDrawerMenu(scrollState: ScrollState) {
 
         }
 
-
     }
 
 }
