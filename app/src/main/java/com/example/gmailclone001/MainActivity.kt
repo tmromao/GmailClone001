@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.gmailclone001.components.GmailDrawerMenu
 import com.example.gmailclone001.components.HomeAppBar
 import com.example.gmailclone001.components.HomeBottomMenu
+import com.example.gmailclone001.components.MailList
 import com.example.gmailclone001.ui.theme.GmailClone001Theme
 
 class MainActivity : ComponentActivity() {
@@ -50,12 +51,7 @@ fun GmailApp() {
 
     ) {
 
-        LazyColumn {
-            items(50) { index ->
-                Text(text = "Index @ $index")
-                Divider()
-            }
-        }
+       MailList(paddingValues = it)
 
     }
 
