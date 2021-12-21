@@ -3,6 +3,7 @@ package com.example.gmailclone001
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -30,6 +31,7 @@ fun GmailApp() {
 
     val scaffoldState = rememberScaffoldState()
     val coroutineScope = rememberCoroutineScope()
+    val scrollState = rememberScrollState()
 
     Scaffold(
 
@@ -37,7 +39,7 @@ fun GmailApp() {
         topBar = { HomeAppBar(scaffoldState = scaffoldState, coroutineScope) },
         drawerContent = {
 
-            GmailDrawerMenu()
+            GmailDrawerMenu(scrollState)
         }
 
     ) {

@@ -1,7 +1,9 @@
 package com.example.gmailclone001.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -13,7 +15,7 @@ import androidx.compose.ui.unit.sp
 import com.example.gmailclone001.ui.DrawerMenuData
 
 @Composable
-fun GmailDrawerMenu() {
+fun GmailDrawerMenu(scrollState: ScrollState) {
 
     val menuList = listOf(
         DrawerMenuData.AllInboxes,
@@ -29,7 +31,7 @@ fun GmailDrawerMenu() {
 
         )
 
-    Column() {
+    Column(Modifier.verticalScroll(scrollState)) {
 
         Text(
             "Gmail", color = Color.Red,
