@@ -1,7 +1,7 @@
 package com.example.gmailclone001.components
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -38,6 +38,26 @@ fun GmailDrawerMenu() {
         )
 
 
+    }
+
+}
+
+@Composable
+fun MailDrawerItem(item: DrawerMenuData) {
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(50.dp)
+            .padding(top = 16.dp)
+    ) {
+
+        Image(
+            imageVector = item.icon!!,
+            contentDescription = item.title!!,
+            modifier = Modifier.weight(0.5f)
+        )
+        Text(text = item.title, modifier = Modifier.weight(2.0f))
     }
 
 }
