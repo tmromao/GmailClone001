@@ -3,6 +3,8 @@ package com.example.gmailclone001
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -48,6 +50,12 @@ fun GmailApp() {
 
     ) {
 
+        LazyColumn {
+            items(50) { index ->
+                Text(text = "Index @ $index")
+                Divider()
+            }
+        }
 
     }
 
