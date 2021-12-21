@@ -3,11 +3,9 @@ package com.example.gmailclone001
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.gmailclone001.components.HomeAppBar
 import com.example.gmailclone001.ui.theme.GmailClone001Theme
@@ -28,8 +26,21 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GmailApp() {
-    Scaffold(topBar = { HomeAppBar() } ) {
-        
+
+    val scaffoldState = rememberScaffoldState()
+    val coroutineScope = rememberCoroutineScope()
+
+    Scaffold(
+
+        scaffoldState = scaffoldState,
+        topBar = { HomeAppBar(scaffoldState = scaffoldState, coroutineScope) },
+        drawerContent = {
+
+        }
+
+    ) {
+
+
     }
 
 }
