@@ -9,9 +9,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.gmailclone001.ui.DrawerMenuData
 
 @Composable
 fun GmailDrawerMenu() {
+
+    val menuList = listOf(
+        DrawerMenuData.AllInboxes,
+        DrawerMenuData.Divider,
+        DrawerMenuData.Calendar,
+        DrawerMenuData.HeaderOne,
+        DrawerMenuData.AllMail,
+        DrawerMenuData.Inbox,
+        DrawerMenuData.Person,
+        DrawerMenuData.HeaderTwo,
+        DrawerMenuData.Settings,
+        DrawerMenuData.Help,
+
+        )
 
     Column() {
 
